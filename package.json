@@ -1,6 +1,6 @@
 {
   "name": "use-memo-mapped",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Persistent array map memoization between rerenders",
   "author": "Andranik Ghevondyan",
   "license": "MIT",
