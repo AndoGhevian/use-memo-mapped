@@ -21,6 +21,14 @@
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AndoGhevian/use-memo-mapped"
+  },
+  "homepage": "https://github.com/AndoGhevian/use-memo-mapped#readme",
+  "bugs": {
+    "url": "https://github.com/AndoGhevian/use-memo-mapped/issues"
+  },
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
