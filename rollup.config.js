@@ -33,5 +33,4 @@ export default {
       ]
     })
   ],
-  external: ['src/test-utils']
 }

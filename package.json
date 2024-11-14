@@ -9,13 +9,13 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "LICENSE",
-    "LICENSES_THIRD_PARTY.md"
+    "LICENSE"
   ],
   "scripts": {
     "build": "rollup -c",
     "test": "jest",
-    "prepare": "npm run build"
+    "coverage": "jest --coverage",
+    "prepare": "npm run test && npm run build"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
@@ -52,8 +52,9 @@
     "hooks",
     "memo",
     "mapped",
+    "impure",
     "map",
-    "map-like",
+    "pure",
     "typescript",
     "react-hooks"
   ],
