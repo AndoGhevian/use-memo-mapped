@@ -131,4 +131,27 @@ describe("useMappedMemo hook", () => {
 
     expect(firstResults).toBe(result.current)
   })
+
+  describe("deps", () => {
+    it("should recompute all values given deps are changed", () => {
+      const persons = [
+        { name: "test-1" },
+        { name: "test-2" },
+      ]
+      const map = jest.fn((item) => item)
+      const { result, rerender } = renderHook((props: {
+        persons: { name: string }[];
+        deps: any[];
+      }) => useMemoMapped(
+        props.persons, map, props.deps
+      ), { initialProps: { persons, deps: [1] } })
+
+      const firstResults = result.current
+      expect(map).toHaveBeenCalledTimes(2)
+
+      rerender({persons: persons, deps: [2]})
+      expect(firstResults).not.toBe(result.current)
+      expect(map).toHaveBeenCalledTimes(4)
+    })
+  })
 })

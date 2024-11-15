@@ -2,9 +2,16 @@ import { useMemo, useRef } from 'react'
 
 export const useMemoMapped = <T extends object, B>(
   array: T[],
-  map: (item: T, index: number, array: T[]) => B
+  map: (item: T, index: number, array: T[]) => B,
+  deps?: any[],
 ): B[] => {
   const weakMapRef = useRef(new WeakMap<T, B>())
+
+  useMemo(() => {
+    weakMapRef.current = new WeakMap<T, B>()
+    console.log(deps)
+  }, deps || [])
+
   return useMemo(() => {
     const mappedData: B[] = []
     array.forEach((item, index) => {
@@ -19,5 +26,5 @@ export const useMemoMapped = <T extends object, B>(
     })
 
     return mappedData
-  }, [array])
+  }, [array, ...(deps || [])])
 }
