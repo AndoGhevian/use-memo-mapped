@@ -1,5 +1,7 @@
 # use-memo-mapped
 
+![React](https://img.shields.io/badge/React-16.8%2B-blue)
+
 `use-memo-mapped` is a custom React hook that maps an array of objects through **impure calculations** while preserving **purity**
 of results, i.e. for same array items you get same results.
 
